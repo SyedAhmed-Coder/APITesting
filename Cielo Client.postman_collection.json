@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "de8d0196-c6d7-4154-9647-7d3baedccddf",
+		"name": "Cielo Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9020948"
+	},
+	"item": [
+		{
+			"name": "Cielo Client Encryption",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "BzQ3zxpCO64U10raFzYxS6Dr2pL9yavgqZlQjx6h",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"is_encrypt\" :0,\n  \"state\" : {\n    \"reported\" : {\n      \"oN7I\": \"Hh?TjriEas\",\n      \"AoI\": \"NlxxW*py\",\n      \"3NQb\": \"Il.Wbl\",\n      \"o7I\": \"kl'HiEzzsFsTsEz'\",\n      \"3NxQ\": \"s,H,T,H,H,H,h,s,s,h,s,s,[H,H,H,H,H,H,H,s,H,H],[H,H,H,H,H,H,H,s,H,H],jsZs,asZs,jsZs,asZs,j,s,s,n'yl1l*x,a,T,Hs,Hj,Hs,H,s,s,EiZs,ajZs,?,H,s,s,H,s,UL1l,raZs,iEZs,s,s,H,3X'm,rTZs,EhZs,s,s,h,Ngll9,rjZs,EhZs,s,s,H,Klxy,raZs,iEZs,s,s,h,,sZs,sZs,H,s,H,,sZs,sZs,H,s,H,,sZs,sZs,H,s,H,,sZs,sZs,H,s,H,,sZs,sZs,H,s,H,,sZs,sZs,H,s,H,\",\n      \"S.lQ\": [\n        \"HZsZh\",\n        \"HZsZE\"\n      ],\n      \"IC5\": \"ACsH\",\n      \"t*5'Q\": [\n        \"ijZs\",\n        \"hs\"\n      ],\n      \"CN\": \"HrjTijahia\",\n      \"Nx'x&y\": \"H\",\n      \"ANQb\": \"H\",\n      \"AQxt2Wyx\": \"H\",\n      \"CuNtQQLQ\": \"s\",\n      \"NN7I\": \"AWlgL AgL&F\",\n      \"qNN7\": \"Tj\"\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/inhouse/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"inhouse",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\n\t{\n\t\t\"userId\": \"testemail@gmmail.comm\",\n\t\t\"password\": \"12345\",\n\t\t\"mobileDeviceId\": \"8f5d0fc27a906dd5\",\n\t\t\"deviceTokenId\": \"d4bFjFzrtcY:APA91bE-DGKNkCox3DFTjmM1-O5iGwm8D0a-GOXf3O52KMGxuw3whvl_sL5xS4pgEqA8wL6cSMsCBSJxP8ZWgyMJ0CTxy_Gok4Mn3zW5fNa0IdF_pSi_W94WLtiC_YWONPCCYinyyiTv\",\n\t\t\"appType\": \"Android\",\n\t\t\"appVersion\": \"3.0.0\",\n\t\t\"timeZone\": \"Asia/Karachi\",\n\t\t\"mobileDeviceName\": \"Galaxy A5 (2016)\",\n\t\t\"deviceType\" : \"ISO\",\n\t\t\"ipAddress\" : \" 232323\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/user/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// ------------ Status Check ------------\r",
+							"if(pm.response.code == 200){\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201,202]);\r",
+							"});\r",
+							"}\r",
+							"//failure case\r",
+							"else if(pm.response.code == 400 ||  pm.response.code == 401 ||  pm.response.code == 402  ||  pm.response.code == 409){\r",
+							"pm.test(pm.response.code+\" \"+pm.response.json().error.message, function () {\r",
+							"    console.log(pm.response.json().error.message);\r",
+							"});\r",
+							"}\r",
+							"else if(pm.response.code == 403 ||  pm.response.code == 404){\r",
+							"pm.test(pm.response.code+\" \"+pm.response.json().message, function () {\r",
+							"    console.log(pm.response.json().message);\r",
+							"});\r",
+							"}\r",
+							"else if(pm.response.code == 498){\r",
+							"pm.test(pm.response.code+\" \"+pm.response.json().error.message, function () {\r",
+							"    console.log(pm.response.json().message);\r",
+							"});\r",
+							"}\r",
+							"else if(pm.response.code == 500 || pm.response.code == 502){\r",
+							"pm.test(pm.response.code, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect.fail(jsonData.error.message);\r",
+							"});\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/device",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"device"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://devapi.smartcielo.com",
+			"disabled": true
+		},
+		{
+			"key": "x-api-key",
+			"value": "BiFUHvAYGtaokPRJpP6ZO73L89kP3S3zaqPpasNQ",
+			"disabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYW51bWJhdG9vbCIsImV4cCI6MTY1NTIwMTY2NiwiY3JlYXRlZF9hdCI6IjE2Mzk2MzE2OTUiLCJkZXZpY2VfdHlwZSI6IklTTyIsIm1vYmlsZV9kZXZpY2VfaWQiOiI4ZjVkMGZjMjdhOTA2ZGQ1IiwiYXBwbGljYXRpb25fdHlwZSI6IkFuZHJvaWQiLCJhcHBsaWNhdGlvbl92ZXJzaW9uIjoiMy4wLjAiLCJpcF9hZGRyZXNzIjoiMjMyMzIzIiwidXNlcl9uYW1lIjoiTi9BIiwibG9jYWxlIjoiZW4iLCJpc19zbWFydF9odmFjIjoiMCIsImVtYWlsX2lkIjoiICIsImlzX2ZvdGFfcmVxdWlyZWQiOiIxIiwiaXNfbWluaXN0YXRfZm90YV9hdmFpbGFibGUiOiIxIiwiaXNfYmxlX2VuYWJsZWRfYXZhaWxhYmxlIjoiMSJ9.Zw7uNxvop4wA55Yz1Ajw5PFDWXbovUerLBIFFgMNxyE",
+			"disabled": true
+		}
+	]
+}
